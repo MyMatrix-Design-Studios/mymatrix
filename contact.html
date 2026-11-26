@@ -288,15 +288,15 @@
                 <section id="contact">
                     <div class="container mil-p-120-90">
                         <h3 class="mil-center mil-up mil-mb-120">Let's <span class="mil-thin">Talk</span></h3>
-                        <form class="row align-items-center">
+                        <form class="row align-items-center" novalidate onsubmit="event.preventDefault(); var f = this; if (!f.reportValidity()) return false; var t = 'Hi MyMatrix,\n\nName: ' + f.elements.name.value.trim() + '\nEmail: ' + f.elements.email.value.trim() + '\n\n' + f.elements.message.value.trim(); window.open('https://wa.me/919967163083?text=' + encodeURIComponent(t), '_blank', 'noopener'); return false;">
                             <div class="col-lg-6 mil-up">
-                                <input type="text" placeholder="What's your name">
+                                <input type="text" name="name" placeholder="What's your name" autocomplete="name" required>
                             </div>
                             <div class="col-lg-6 mil-up">
-                                <input type="email" placeholder="Your Email">
+                                <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
                             </div>
                             <div class="col-lg-12 mil-up">
-                                <textarea placeholder="Tell us about our project"></textarea>
+                                <textarea name="message" placeholder="Tell us about our project" required></textarea>
                             </div>
                             <div class="col-lg-8">
                                 <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> We promise not to disclose your personal information to third parties.</p>
@@ -304,7 +304,7 @@
                             <div class="col-lg-4">
                                 <div class="mil-adaptive-right mil-up mil-mb-30">
                                     <button type="submit" class="mil-button mil-arrow-place">
-                                        <span>Send message</span>
+                                        <span>Send on WhatsApp</span>
                                     </button>
                                 </div>
                             </div>
